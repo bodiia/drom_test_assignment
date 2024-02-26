@@ -45,7 +45,7 @@ final readonly class CommentsClient
     {
         $req = $this->requestFactory
             ->createRequest('GET', self::BASE_URI . '/comments')
-            ->withBody($this->streamFactory->createStream($comment->toJson()))
+            ->withBody($this->streamFactory->createStream(json_encode($comment->toArray())))
             ->withHeader('Accept', 'application/json')
             ->withHeader('Content-Type', 'application/json');
 
@@ -65,7 +65,7 @@ final readonly class CommentsClient
 
         $req = $this->requestFactory
             ->createRequest('PUT', self::BASE_URI . '/comments/' . $comment->getId())
-            ->withBody($this->streamFactory->createStream($comment->toJson()))
+            ->withBody($this->streamFactory->createStream(json_encode($comment->toArray())))
             ->withHeader('Accept', 'application/json')
             ->withHeader('Content-Type', 'application/json');
 

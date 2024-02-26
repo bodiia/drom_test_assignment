@@ -43,13 +43,4 @@ final readonly class Comment
             'text' => $this->text,
         ];
     }
-
-    public function toJson(): string
-    {
-        return json_encode([
-            'id' => $this->id,
-            'name' => $this->name,
-            'text' => $this->text,
-        ]);
-    }
 }
