@@ -1,0 +1,7 @@
+vendor
+.idea
+.git
+phpcs.xml.dist
+.phpcs-cache
+.phpunit.cache
+./Dockerfile
